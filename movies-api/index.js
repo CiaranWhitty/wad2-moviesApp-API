@@ -6,7 +6,8 @@ import bodyParser from 'body-parser';
 import {loadUsers} from './seedData'
 import usersRouter from './api/users';
 import session from 'express-session';
-import authenticate from './authenticate';
+// replace existing import with passport strategy​
+import passport from './authenticate';
 
 dotenv.config();
 
@@ -31,6 +32,9 @@ if (process.env.SEED_DB) {
   loadUsers();
 }
 
+// initialise passport​
+app.use(passport.initialize())
+
 //session middleware
 app.use(session({
   secret: 'ilikecake',
@@ -41,8 +45,8 @@ app.use(session({
 
 
 app.use(express.static('public'));
-//update /api/Movie route
-app.use('/api/movies', authenticate, moviesRouter);
+// Add passport.authenticate(..)  to middleware stack for protected routes​
+app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
 //Users router
 app.use('/api/users', usersRouter);
 
