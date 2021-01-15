@@ -33,6 +33,7 @@ if (process.env.SEED_DB) {
 
 
 
+
 app.use(express.static('public'));
 //Movies router
 app.use('/api/movies', moviesRouter);

@@ -11,6 +11,7 @@ db.on('error', (err) => {
     console.log(`database connection error: ${err}`);
 });
 db.on('disconnected', () => {
+    db.dropDatabase();// only use if error (it drops the database)
     console.log('database disconnected');
 });
 db.once('open', () => {
