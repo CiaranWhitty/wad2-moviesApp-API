@@ -3,11 +3,11 @@ import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
 import bodyParser from 'body-parser';
-import {loadUsers} from './seedData'
 import usersRouter from './api/users';
 import session from 'express-session';
 // replace existing import with passport strategy​
 import passport from './authenticate';
+import {loadUsers, loadMovies} from './seedData';
 
 dotenv.config();
 
@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded())
 
 if (process.env.SEED_DB) {
   loadUsers();
+  loadMovies();
 }
 
 // initialise passport​
