@@ -4,6 +4,7 @@ import express from 'express';
 import moviesRouter from './api/movies';
 import bodyParser from 'body-parser';
 import {loadUsers} from './seedData'
+import usersRouter from './api/users';
 
 dotenv.config();
 
@@ -33,7 +34,10 @@ if (process.env.SEED_DB) {
 
 
 app.use(express.static('public'));
+//Movies router
 app.use('/api/movies', moviesRouter);
+//Users router
+app.use('/api/users', usersRouter);
 
 app.use(errHandler);
 
