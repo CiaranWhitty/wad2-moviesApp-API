@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { AuthContext } from './authContext';
+import { AuthContext } from '../contexts/authContext';
 import { Link } from "react-router-dom";
 
 const LoginPage = props => {
@@ -21,18 +21,22 @@ const LoginPage = props => {
   }
   return (
     <>
+      
       <h2>Login page</h2>
       <p>You must log in to view the protected pages </p>
+      
       <input id="username" placeholder="user name" onChange={e => {
         setUserName(e.target.value);
       }}></input><br />
       <input id="password" type="password" placeholder="password" onChange={e => {
         setPassword(e.target.value);
       }}></input><br />
+
       {/* Login web form  */}
       <button onClick={login}>Log in</button>
       <p>Not Registered?
       <Link to="/signup">Sign Up!</Link></p>
+
     </>
   );
 };
