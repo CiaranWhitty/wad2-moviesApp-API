@@ -3,7 +3,6 @@ import { Menu } from 'semantic-ui-react'
 import ButnSignIn from '../buttons/butnSignIn'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiXCircle } from "react-icons/bi";
-import { Image } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 export default function LoggedOut (){
@@ -13,7 +12,7 @@ export default function LoggedOut (){
   return (
     
     <div>
-      <Menu size='massive' stackable pointing>
+      <Menu size='massive' pointing>
         <Menu.Menu>
         
         <Menu.Item>
@@ -40,7 +39,7 @@ export default function LoggedOut (){
         
         <Menu.Menu >
           <Menu.Item
-              name='Home'
+              name='Web Dev Api'
               as={Link} to='/'
             />
           </Menu.Menu>
@@ -90,11 +89,6 @@ export default function LoggedOut (){
                 <Menu.Item
                   name='Movies'
                   as={Link} to='/movies'
-                />
-                
-                <Menu.Item
-                  name='Profile'
-                  as={Link} to='/profile'
                 />
 
                 <Menu.Item>

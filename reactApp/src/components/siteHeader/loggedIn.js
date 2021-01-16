@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import { Menu, Input } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiXCircle } from "react-icons/bi";
-import { Image } from 'semantic-ui-react'
 import ButnLogOut from '../buttons/butnLogOut'
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ export default function LoggedIn (){
 
     return (
       <div>
-        <Menu size='massive' stackable pointing>
+        <Menu size='massive' pointing>
   
           <Menu.Menu>
             <Menu.Item>
@@ -39,7 +38,7 @@ export default function LoggedIn (){
           
           <Menu.Menu >
           <Menu.Item
-              name='Home'
+              name='Web Dev Api'
               as={Link} to='/u/'
             />
           </Menu.Menu>
@@ -79,28 +78,24 @@ export default function LoggedIn (){
 
             <Menu.Item
               name='Home'
-              as={Link} to='/'
+              as={Link} to='/u/'
             />
 
             <Menu.Item
               name='Public'
-              as={Link} to='/public'
+              as={Link} to='/u/public'
             />
 
             <Menu.Item
               name='Movies'
-              as={Link} to='/movies'
+              as={Link} to='/u/movies'
             />
             
             <Menu.Item
               name='Profile'
-              as={Link} to='/profile'
-            />
-
-            <Menu.Item
-              name='Profile'
               as={Link} to='/u/profile'
             />
+
             
             <Menu.Item>
               <ButnLogOut />

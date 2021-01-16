@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { AuthContext } from '../contexts/authContext';
+import { Container, Header } from 'semantic-ui-react'
 
 const SignUpPage = props => {
   const context = useContext(AuthContext)
@@ -15,7 +16,8 @@ const SignUpPage = props => {
       setRegistered(true);
     }
   }
-
+  
+  // eslint-disable-next-line 
   const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (registered === true) {
@@ -24,21 +26,47 @@ const SignUpPage = props => {
 
   return (
     <>
-      <h2>SignUp page</h2>
-      <p>You must register a username and password to log in </p>
 
-      <input value={userName} placeholder="user name" onChange={e => {
-        setUserName(e.target.value);
-      }}></input><br />
-      <input value={password} type="password" placeholder="password" onChange={e => {
-        setPassword(e.target.value);
-      }}></input><br />
-      <input value={passwordAgain} type="password" placeholder="password again" onChange={e => {
-        setPasswordAgain(e.target.value);
-      }}></input><br />
+    
+      <Container textAlign='center' text >
+        <Header as='h2'>SignUp page</Header>
+          
+          <p>You must register a username and password to log in </p>
 
-      {/* Login web form  */}
-      <button onClick={register}>Register</button>
+          <input 
+          value={userName} 
+          placeholder="user name" 
+          onChange={e => {
+            setUserName(e.target.value);
+          }}>
+          </input>
+          <br />
+
+          <input 
+          value={password} 
+          type="password" 
+          placeholder="password" 
+          onChange={e => {
+            setPassword(e.target.value);
+          }}>
+          </input>
+          <br />
+
+          <input 
+          value={passwordAgain} 
+          type="password" 
+          placeholder="password again" 
+          onChange={e => {
+            setPasswordAgain(e.target.value);
+          }}>
+          </input>
+          <br />
+
+          {/* Login web form  */}
+          <button onClick={register}>Register</button>
+          <p>Registered?<Link to="/login">Sign In!</Link></p>
+          
+      </Container>
       
     </>
   );
