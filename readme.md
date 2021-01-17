@@ -6,7 +6,7 @@ Name: Ciaran Whitty 20085909
  
  + Feature 1 - View movies (Discover, Upcoming, nowplaying in Ireland) .
 
-## Setup requirements (If required).
+## Setup requirements.
 
 ### WebSite.
 
