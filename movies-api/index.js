@@ -2,12 +2,13 @@ import './db';
 import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
+// import genresRouter from './api/genres';
 import bodyParser from 'body-parser';
 import usersRouter from './api/users';
 import session from 'express-session';
 // replace existing import with passport strategy​
 import passport from './authenticate';
-import {loadUsers, loadMovies} from './seedData';
+import {loadUsers, loadMovies, loadGenres} from './seedData';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded())
 if (process.env.SEED_DB) {
   loadUsers();
   loadMovies();
+  loadGenres();
 }
 
 // initialise passport​
@@ -48,6 +50,8 @@ app.use(session({
 app.use(express.static('public'));
 // Add passport.authenticate(..)  to middleware stack for protected routes​
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/genres', moviesRouter);
+
 //Users router
 app.use('/api/users', usersRouter);
 

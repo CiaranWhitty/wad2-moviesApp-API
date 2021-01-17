@@ -22,10 +22,15 @@ router.get('/:id/reviews', (req, res, next) => {
   .catch((error) => next(error));
 });
 
+// router.get('/genres/list', (req, res, next) => {
+//   getGenres()
+//   .then(list => res.status(200).send(list))
+//   .catch((error) => next(error));
+// });
+
+//genres instead of list?
 router.get('/genres/list', (req, res, next) => {
-  getGenres()
-  .then(list => res.status(200).send(list))
-  .catch((error) => next(error));
+  movieModel.find().then(list => res.status(200).send(list)).catch(next);
 });
 
 export default router;

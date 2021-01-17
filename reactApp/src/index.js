@@ -13,6 +13,7 @@ import PrivateRoute from "./routes/privateRoute";
 
 import AuthProvider from "./contexts/authContext";
 import MovieProvider from "./contexts/moviesContext";
+import GenresContextProvider from "./contexts/genresContext";
 
 import SiteHeader from "./components/siteHeader";
 
@@ -24,6 +25,8 @@ const App = () => {
         <SiteHeader />
 
           <MovieProvider>
+          <GenresContextProvider> 
+
             <Switch>
               <Route path="/public" component={PublicPage} />
               <Route path="/login" component={LoginPage} />
@@ -38,6 +41,8 @@ const App = () => {
 
               <Redirect from="*" to="/" />
             </Switch>
+            </GenresContextProvider>
+
           </MovieProvider>
 
       </AuthProvider>

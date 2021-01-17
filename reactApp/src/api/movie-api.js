@@ -20,9 +20,20 @@ export const signup = (username, password) => {
 
 export const getMovies = () => {
   return fetch(
-     '/api/movies',{headers: {
+     '/api/movies',{
+       headers: {
        'Authorization': window.localStorage.getItem('token')
-    }
+      }
+  }
+  ).then(res => res.json());
+};
+
+export const getGenres = () => {
+  return fetch(
+     '/api/genres',{
+      headers: {
+        'Content-Type': 'application/json'
+      },
   }
   ).then(res => res.json());
 };
