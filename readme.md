@@ -4,7 +4,7 @@ Name: Ciaran Whitty 20085909
 
 ## Features.
  
- + Feature 1 - View movies from .
+ + Feature 1 - View movies (Discover, Upcoming, nowplaying in Ireland) .
 
 ## Setup requirements (If required).
 
@@ -16,14 +16,11 @@ Name: Ciaran Whitty 20085909
 
 + REACT_APP_TMDB_KEY
 
-
 ## API Data Model.
 
 + https://api.themoviedb.org/3/discover/movie - Discover movies by different types of data like search.
 + https://api.themoviedb.org/3/movie/upcoming - Get a list of upcoming movies in theatres
 + https://api.themoviedb.org/3/movie/now_playing - Get a list of movies in theatres in Ireland. 
-
-## App Design.
 
 ## Routing.
 
