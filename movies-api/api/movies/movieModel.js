@@ -30,21 +30,10 @@ const MovieSchema = new Schema({
   tagline: { type: String }
 });
 
-const GenreSchema = new Schema({
-  
-  id: { type: Number, required: true, unique: true },
-  gname: { type: String }
-
-});
-
 MovieSchema.statics.findByMovieDBId = function (id) {
   return this.findOne({ id: id });
 };
 
-GenreSchema.statics.findByGenreDBId = function (id) {
-  return this.findByAll({ id: id });
-};
-
-export default mongoose.model('Movies', {GenreSchema});
+export default mongoose.model('Movies', {MovieSchema});
 
 

@@ -80,22 +80,36 @@ export default function LoggedIn (){
               name='Home'
               as={Link} to='/u/'
             />
-
+            
             <Menu.Item
-              name='Public'
-              as={Link} to='/u/public'
+              name='Profile'
+              as={Link} to='/u/movies/watchlist'
             />
 
             <Menu.Item
               name='Movies'
               as={Link} to='/u/movies'
             />
+
+            <Menu.Item
+              name='Upcoming'
+              as={Link} to='/u/upcoming'
+            />            
             
             <Menu.Item
-              name='Profile'
-              as={Link} to='/u/profile'
+            name='Nowplaying'
+            as={Link} to='/u/nowplaying'
             />
-
+                        
+            <Menu.Item
+              name='Watchlist'
+              as={Link} to='/u/watchlist'
+            />            
+            
+            <Menu.Item
+            name='Favorites'
+            as={Link} to='/u/movies/favorites'
+            />
             
             <Menu.Item>
               <ButnLogOut />

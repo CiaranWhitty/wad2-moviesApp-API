@@ -37,6 +37,7 @@ const MovieListPageTemplate = ({ movies, title, action }) => {
           <MovieList
           action={action}
           movies={displayedMovies}
+          // movies={movies}
           />
       
     </>

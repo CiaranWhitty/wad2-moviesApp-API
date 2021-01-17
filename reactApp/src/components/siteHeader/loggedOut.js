@@ -82,15 +82,20 @@ export default function LoggedOut (){
                 />
 
                 <Menu.Item
-                  name='Public'
-                  as={Link} to='/public'
-                />
-
-                <Menu.Item
                   name='Movies'
                   as={Link} to='/movies'
                 />
 
+                <Menu.Item
+                  name='Upcoming'
+                  as={Link} to='/u/upcoming'
+                />            
+                
+                <Menu.Item
+                name='Nowplaying'
+                as={Link} to='/u/nowplaying'
+                />
+                
                 <Menu.Item>
                   <ButnSignIn />
                 </Menu.Item>

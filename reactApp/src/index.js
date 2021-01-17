@@ -2,10 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
-import PublicPage  from "./pages/publicPage";
 import Movies   from "./pages/movies";
+import Upcoming   from "./pages/upcoming";
+import NowPlaying   from "./pages/nowPlaying";
 import Profile  from "./pages/profile";
 import HomePage from "./pages/homePage";
+import WatchListMoviesPage from './pages/watchListMoviesPage'
+import FavoriteMoviesPage from './pages/favoritesMoviesPage'  
+
 
 import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/signUpPage";
@@ -28,7 +32,6 @@ const App = () => {
           <GenresContextProvider> 
 
             <Switch>
-              <Route path="/public" component={PublicPage} />
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} />
               <Route exact path="/" component={HomePage} />
@@ -36,8 +39,11 @@ const App = () => {
               <PrivateRoute path="/movies" component={Movies} />
               <PrivateRoute exact path="/u/" component={HomePage} />
               <PrivateRoute exact path="/u/movies" component={Movies} />
+              <PrivateRoute exact path="/u/upcoming" component={Upcoming} />
+              <PrivateRoute exact path="/u/nowplaying" component={NowPlaying} />
+              <PrivateRoute exact path="/u/movies/favorites" component={FavoriteMoviesPage} />
+              <PrivateRoute exact path="/u/movies/watchlist" component={WatchListMoviesPage} />
               <PrivateRoute exact path="/u/profile" component={Profile} />
-              <PrivateRoute exact path="/u/public" component={PublicPage} />
 
               <Redirect from="*" to="/" />
             </Switch>

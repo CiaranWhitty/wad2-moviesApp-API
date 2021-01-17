@@ -30,10 +30,31 @@ export const getMovies = () => {
 
 export const getGenres = () => {
   return fetch(
-     '/api/genres',{
+     '/api/genre/movie/list',{
       headers: {
-        'Content-Type': 'application/json'
+       'Authorization': window.localStorage.getItem('token')
       },
   }
   ).then(res => res.json());
 };
+
+export const getUpcomingMovies = () => {
+  return fetch(
+     '/api/upcoming',{
+       headers: {
+       'Authorization': window.localStorage.getItem('token')
+      }
+  }
+  ).then(res => res.json());
+};
+
+export const getNowPlayingMovies = () => {
+  return fetch(
+     '/api/nowplaying',{
+       headers: {
+       'Authorization': window.localStorage.getItem('token')
+      }
+  }
+  ).then(res => res.json());
+};
+

@@ -5,11 +5,15 @@ import { MoviesContext } from '../contexts/moviesContext';
 
 const DiscoverMoviesPage = () => {
   const context = useContext(MoviesContext);
+  
   const movies = context.movies.filter((m) => {
     return !("favorite" in m);
   });
+
   console.log("m: "+ movies);
 
+  {context.movies.map(movie => { return <>{movie.id},{movie.title}<br /></> })}
+  
   return (
     <PageTemplate
       title="Discover Movies"

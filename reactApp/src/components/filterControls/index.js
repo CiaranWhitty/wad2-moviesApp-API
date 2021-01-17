@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./filterControls.css";
-import { GenresContext } from '../../contexts/genresContext' 
+//import { GenresContext } from '../../contexts/genresContext' 
 
 const FilterControls = props => {
-  const context = useContext(GenresContext);
+  //const context = useContext(GenresContext);
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -12,11 +12,11 @@ const FilterControls = props => {
   const handleTextChange = e => {
     handleChange(e, "name", e.target.value);
   };
-  const handleGenreChange = e => {
-    handleChange(e, "genre", e.target.value);
-    console.log("G0-"+ e.target.value)
-    //console.log("G0"+ genres[0].name)
-  };
+  // const handleGenreChange = e => {
+  //   handleChange(e, "genre", e.target.value);
+  //   console.log("G0-"+ e.target.value)
+  //   //console.log("G0"+ genres[0].name)
+  // };
 
   return (
     <div className="row bg-warning">
